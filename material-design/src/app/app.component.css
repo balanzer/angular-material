@@ -18,6 +18,11 @@
   .example-spacer {
     flex: 1 1 auto;
   }
+
+  .form-element-spacer {
+    width: 30px;  
+  }
+  
   
   .footer-font {
     font-size:10px;
@@ -32,10 +37,10 @@
   }
   
   .form-field-full-width {
-    width: 100%;
+    width: 300px;
   }
   .form-field-single-width {
-    width: 50%;
+    width: 300px;
   }
 
 .example-container {

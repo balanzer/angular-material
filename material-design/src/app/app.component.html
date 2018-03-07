@@ -73,23 +73,22 @@
 
       <div class="container">
           <!-- Page Content goes here -->
-      
+    
       <div class="row">
           <mat-vertical-stepper [linear]="isLinear" #stepper="matVerticalStepper">
             <mat-step [stepControl]="firstFormGroup">
               <form [formGroup]="firstFormGroup">
                 <ng-template matStepLabel>Fill out your name</ng-template>
-          
-            <table class="example-full-width" cellspacing="20"><tr>
-              <td> <mat-form-field class="form-field-full-width">
-                  <input matInput placeholder="First name" formControlName="firstName" required>
-                  <mat-icon matSuffix>person</mat-icon>
-                </mat-form-field></td>
-              <td>    <mat-form-field class="form-field-full-width">
+                
+            <mat-form-field class="form-field-full-width">
+                <input matInput placeholder="First name" formControlName="firstName" required>
+                <mat-icon matSuffix>person</mat-icon>
+            </mat-form-field>
+            <span class="form-element-spacer">&nbsp;</span>
+            <mat-form-field class="form-field-full-width">
                   <input matInput placeholder="Last name" formControlName="lastName" required>
                   <mat-icon matSuffix>person</mat-icon>
-                </mat-form-field></td>
-            </tr></table>
+            </mat-form-field>
            
                 <div>
                   <button mat-raised-button matStepperNext color="primary">Next</button>
