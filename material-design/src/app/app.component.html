@@ -1,0 +1,229 @@
+
+
+  <!-- Header Section -->
+  <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">
+         <mat-toolbar color="primary">
+          <mat-toolbar-row>
+            <span>IHG<sup>®</sup></span>
+            <span class="example-spacer"></span>
+            <span class="header-app-title-font">Campaign Request</span>
+            <a href="#!"><span matTooltip="Home"><mat-icon class="header-icon">home</mat-icon></span></a>
+            <a href="#!"><span matTooltip="Logout"><mat-icon class="header-icon">lock</mat-icon></span></a>
+          </mat-toolbar-row>
+        </mat-toolbar>
+        </div>
+      </nav>
+    </div>
+
+  <!-- Header Section -->
+
+  <div class="container">
+      <!-- Page Content goes here -->
+  
+  <div class="row">
+      <mat-vertical-stepper [linear]="isLinear" #stepper="matVerticalStepper">
+        <mat-step [stepControl]="firstFormGroup">
+          <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Fill out your name</ng-template>
+      
+        <table class="example-full-width" cellspacing="20"><tr>
+          <td> <mat-form-field class="form-field-full-width">
+              <input matInput placeholder="First name" formControlName="firstName" required>
+              <mat-icon matSuffix>person</mat-icon>
+            </mat-form-field></td>
+          <td>    <mat-form-field class="form-field-full-width">
+              <input matInput placeholder="Last name" formControlName="lastName" required>
+              <mat-icon matSuffix>person</mat-icon>
+            </mat-form-field></td>
+        </tr></table>
+       
+            <div>
+              <button mat-raised-button matStepperNext color="primary">Next</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup">
+          <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>Fill out your email</ng-template>
+             <mat-form-field class="form-field-single-width">
+                <input matInput placeholder="Enter your email" [formControl]="email" required>
+                <mat-icon matSuffix>email</mat-icon>
+                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+              </mat-form-field>
+            <div>
+              <button mat-raised-button color="accent"  matStepperPrevious>Back</button>
+              <button mat-raised-button color="primary" matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+      
+        <mat-step [stepControl]="partnerAgreementFG">
+          <form [formGroup]="partnerAgreementFG">
+            <ng-template matStepLabel>Select Partner Agreement</ng-template>
+            
+      <mat-form-field>
+        <mat-select placeholder="Partner Agreement" [formControl]="partnerAgreementCtrl" required>
+          <mat-option>--</mat-option>
+          <mat-option *ngFor="let partAggValue of partnerAgreementValues" [value]="partAggValue">
+            {{partAggValue.name}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="partnerAgreementCtrl.hasError('required')">Please choose an agreement</mat-error>
+        <!--<mat-hint>{{partnerAgreementCtrl.value?.value}}</mat-hint>  -->
+      </mat-form-field>
+      
+            <div>
+              <button mat-raised-button color="accent"  matStepperPrevious>Back</button>
+              <button mat-raised-button color="primary"   matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+        
+        <mat-step [stepControl]="placeHolderFG">
+            <form [formGroup]="placeHolderFG">
+              <ng-template matStepLabel>Fill out Campaign  details</ng-template>
+          
+          <div>
+                <button mat-raised-button color="accent"  matStepperPrevious>Back</button>
+                <button mat-raised-button color="primary"   matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+      
+            
+        <mat-step [stepControl]="placeHolderFG">
+            <form [formGroup]="placeHolderFG">
+              <ng-template matStepLabel>Select Vendor</ng-template>
+          
+          <div>
+                <button mat-raised-button color="accent"  matStepperPrevious>Back</button>
+                <button mat-raised-button color="primary"   matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+        
+      
+      
+            
+        <mat-step [stepControl]="placeHolderFG">
+            <form [formGroup]="placeHolderFG">
+              <ng-template matStepLabel>Select Region(s)</ng-template>
+          
+          <div>
+                <button mat-raised-button color="accent"  matStepperPrevious>Back</button>
+                <button mat-raised-button color="primary"   matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+        
+      
+            
+        <mat-step [stepControl]="placeHolderFG">
+            <form [formGroup]="placeHolderFG">
+              <ng-template matStepLabel>Select Brands(s)</ng-template>
+          
+          <div>
+                <button mat-raised-button color="accent"  matStepperPrevious>Back</button>
+                <button mat-raised-button color="primary"   matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+        
+      
+            
+        <mat-step [stepControl]="placeHolderFG">
+            <form [formGroup]="placeHolderFG">
+              <ng-template matStepLabel>Select Viewport(s)</ng-template>
+          
+          <div>
+                <button mat-raised-button color="accent"  matStepperPrevious>Back</button>
+                <button mat-raised-button color="primary"   matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+        
+      
+      
+            
+        <mat-step [stepControl]="placeHolderFG">
+            <form [formGroup]="placeHolderFG">
+              <ng-template matStepLabel>Select Tracing Type</ng-template>
+          
+          <div>
+                <button mat-raised-button color="accent"  matStepperPrevious>Back</button>
+                <button mat-raised-button color="primary"   matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+        
+      
+      
+            
+        <mat-step [stepControl]="placeHolderFG">
+            <form [formGroup]="placeHolderFG">
+              <ng-template matStepLabel>Fill out Tracking  details</ng-template>
+          
+          <div>
+                <button mat-raised-button color="accent"  matStepperPrevious>Back</button>
+                <button mat-raised-button color="primary"   matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+      
+                
+        <mat-step [stepControl]="placeHolderFG">
+            <form [formGroup]="placeHolderFG">
+              <ng-template matStepLabel>Special Instructions </ng-template>
+          
+          <div>
+                <button mat-raised-button color="accent"  matStepperPrevious>Back</button>
+                <button mat-raised-button color="primary"   matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+        
+                
+          <mat-step [stepControl]="placeHolderFG">
+              <form [formGroup]="placeHolderFG">
+                <ng-template matStepLabel>Notes</ng-template>
+            
+            <div>
+                  <button mat-raised-button color="accent"  matStepperPrevious>Back</button>
+                  <button mat-raised-button color="primary"   matStepperNext>Next</button>
+                </div>
+              </form>
+            </mat-step>
+          
+      
+        
+        
+      
+        <mat-step>
+          <ng-template matStepLabel>Done</ng-template>
+          You are now done.
+          <div>
+            <button mat-raised-button color="accent"  matStepperPrevious>Back</button>
+            <button mat-raised-button color="warn"   (click)="stepper.reset()">Reset</button>
+          </div>
+        </mat-step>
+      </mat-vertical-stepper>
+      
+        </div>
+      </div>
+
+<!--Footer Section -->
+
+<div class="container">
+  <div class="row">
+      <mat-toolbar color="accent">
+        <mat-toolbar-row>
+            <span class="footer-font">© 2018 IHG. All rights reserved.</span>
+        </mat-toolbar-row>
+      </mat-toolbar>
+  </div>
+</div>
+
+<!-- Footer Section -->
+

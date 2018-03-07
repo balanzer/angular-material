@@ -1,0 +1,39 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  .example-icon {
+    padding: 0 24px;
+  }
+  .header-icon {
+    padding: 0 24px;
+    color: white;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  
+  .footer-font {
+    font-size:10px;
+    text-align:center;
+    width: 100%;
+  }
+  
+  .header-app-title-font {
+    font-size:15px;
+    text-align:center;
+    width: 100%;
+  }
+  
+  .form-field-full-width {
+    width: 100%;
+  }
+  .form-field-single-width {
+    width: 50%;
+  }
