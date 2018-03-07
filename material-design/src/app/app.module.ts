@@ -41,6 +41,10 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 //select
 import {MatSelectModule} from '@angular/material/select';
 
+//list
+import {MatListModule} from '@angular/material/list';
+
+
 
 @NgModule({
   declarations: [
@@ -53,7 +57,7 @@ import {MatSelectModule} from '@angular/material/select';
     MatButtonModule, MatCheckboxModule,BrowserAnimationsModule,
     MatSidenavModule, MatInputModule, MatMenuModule, MatToolbarModule,
     MatIconModule, MatStepperModule, MatProgressBarModule, MatTooltipModule,
-    MatSelectModule
+    MatSelectModule, MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
