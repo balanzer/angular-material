@@ -10,17 +10,17 @@
             <form [formGroup]="firstFormGroup">
               <ng-template matStepLabel>Fill out your details</ng-template>
               
-          <mat-form-field class="form-field-full-width">
+          <mat-form-field class="field-text-width">
               <input matInput placeholder="First name" formControlName="firstName" required>
               <mat-icon matSuffix>person</mat-icon>
           </mat-form-field>
-          <span class="form-element-spacer">&nbsp;</span>
-          <mat-form-field class="form-field-full-width">
+          <span class="form-element-spacer"></span>
+          <mat-form-field class="field-text-width">
                 <input matInput placeholder="Last name" formControlName="lastName" required>
                 <mat-icon matSuffix>person</mat-icon>
           </mat-form-field>
-          <span class="form-element-spacer">&nbsp;</span>
-          <mat-form-field class="form-field-single-width">
+          <span class="form-element-spacer"></span>
+          <mat-form-field class="field-text-width-2">
             <input matInput placeholder="Enter your email" [formControl]="email" required>
             <mat-icon matSuffix>email</mat-icon>
             <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
@@ -34,9 +34,21 @@
     
           <mat-step [stepControl]="partnerAgreementFG">
             <form [formGroup]="partnerAgreementFG">
-              <ng-template matStepLabel>Select Partner Agreement</ng-template>
+              <ng-template matStepLabel>Fill out Campaign  details</ng-template>
               
-        <mat-form-field>
+              <mat-form-field class="field-text-width">
+                  <input matInput placeholder="Campaign name">
+                  <mat-icon matSuffix>edit</mat-icon>
+              </mat-form-field>     
+
+        <span class="form-element-spacer"></span>
+
+        <mat-form-field class="field-text-width-txtarea">
+            <textarea matInput placeholder="Campaign details"></textarea>
+          </mat-form-field>
+          <span class="form-element-spacer"></span>
+
+        <mat-form-field class="field-text-width">
           <mat-select placeholder="Partner Agreement" [formControl]="partnerAgreementCtrl" required>
             <mat-option>--</mat-option>
             <mat-option *ngFor="let partAggValue of partnerAgreementValues" [value]="partAggValue">
@@ -46,6 +58,20 @@
           <mat-error *ngIf="partnerAgreementCtrl.hasError('required')">Please choose an agreement</mat-error>
           <!--<mat-hint>{{partnerAgreementCtrl.value?.value}}</mat-hint>  -->
         </mat-form-field>
+        <span class="form-element-spacer"></span>
+        <mat-form-field class="field-text-width">
+            <input matInput [matDatepicker]="stDate" placeholder="Start Date" disabled>
+            <mat-datepicker-toggle matSuffix [for]="stDate"></mat-datepicker-toggle>
+            <mat-datepicker #stDate disabled="false"></mat-datepicker>
+        </mat-form-field>
+        <span class="form-element-spacer"></span>
+        <mat-form-field class="field-text-width">
+            <input matInput [matDatepicker]="edDate" placeholder="End Date" disabled>
+            <mat-datepicker-toggle matSuffix [for]="edDate"></mat-datepicker-toggle>
+            <mat-datepicker #edDate disabled="false"></mat-datepicker>
+        </mat-form-field>
+
+
         
               <div>
                 <button mat-raised-button color="accent"  matStepperPrevious>Back</button>
@@ -54,35 +80,15 @@
             </form>
           </mat-step>
           
-          <mat-step [stepControl]="placeHolderFG">
-              <form [formGroup]="placeHolderFG">
-                <ng-template matStepLabel>Fill out Campaign  details</ng-template>
-            
-            <div>
-                  <button mat-raised-button color="accent"  matStepperPrevious>Back</button>
-                  <button mat-raised-button color="primary"   matStepperNext>Next</button>
-                </div>
-              </form>
-            </mat-step>
-        
-              
-          <mat-step [stepControl]="placeHolderFG">
-              <form [formGroup]="placeHolderFG">
-                <ng-template matStepLabel>Select Vendor</ng-template>
-            
-            <div>
-                  <button mat-raised-button color="accent"  matStepperPrevious>Back</button>
-                  <button mat-raised-button color="primary"   matStepperNext>Next</button>
-                </div>
-              </form>
-            </mat-step>
+    
+     
           
         
         
               
           <mat-step [stepControl]="placeHolderFG">
               <form [formGroup]="placeHolderFG">
-                <ng-template matStepLabel>Select Region(s)</ng-template>
+                <ng-template matStepLabel>Select Campaign Placement(s)</ng-template>
             
             <div>
                   <button mat-raised-button color="accent"  matStepperPrevious>Back</button>
@@ -90,49 +96,6 @@
                 </div>
               </form>
             </mat-step>
-          
-        
-              
-          <mat-step [stepControl]="placeHolderFG">
-              <form [formGroup]="placeHolderFG">
-                <ng-template matStepLabel>Select Brands(s)</ng-template>
-            
-            <div>
-                  <button mat-raised-button color="accent"  matStepperPrevious>Back</button>
-                  <button mat-raised-button color="primary"   matStepperNext>Next</button>
-                </div>
-              </form>
-            </mat-step>
-          
-        
-              
-          <mat-step [stepControl]="placeHolderFG">
-              <form [formGroup]="placeHolderFG">
-                <ng-template matStepLabel>Select Viewport(s)</ng-template>
-            
-            <div>
-                  <button mat-raised-button color="accent"  matStepperPrevious>Back</button>
-                  <button mat-raised-button color="primary"   matStepperNext>Next</button>
-                </div>
-              </form>
-            </mat-step>
-          
-        
-        
-              
-          <mat-step [stepControl]="placeHolderFG">
-              <form [formGroup]="placeHolderFG">
-                <ng-template matStepLabel>Select Tracing Type</ng-template>
-            
-            <div>
-                  <button mat-raised-button color="accent"  matStepperPrevious>Back</button>
-                  <button mat-raised-button color="primary"   matStepperNext>Next</button>
-                </div>
-              </form>
-            </mat-step>
-          
-        
-        
               
           <mat-step [stepControl]="placeHolderFG">
               <form [formGroup]="placeHolderFG">
@@ -169,7 +132,7 @@
                 </form>
               </mat-step>
           <mat-step>
-            <ng-template matStepLabel>Done</ng-template>
+            <ng-template matStepLabel>Submit</ng-template>
             You are now done.
             <div>
               <button mat-raised-button color="accent"  matStepperPrevious>Back</button>

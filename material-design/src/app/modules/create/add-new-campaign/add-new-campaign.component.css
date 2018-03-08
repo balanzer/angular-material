@@ -7,53 +7,34 @@
   .example-full-width {
     width: 100%;
   }
-  .example-icon {
-    padding: 0 24px;
-  }
-  .header-icon {
-    padding: 0 24px;
-    color: white;
-  }
-  
+ 
   .example-spacer {
     flex: 1 1 auto;
   }
 
   .form-element-spacer {
-    padding: 20px;
+    padding: 10px;
+    border: 0px solid rgba(0, 0, 0, 0.5);
   }
   
   
 
+
   
-  .header-app-title-font {
-    font-size:15px;
-    text-align:center;
-    width: 100%;
-  }
-  
-  .form-field-full-width {
+  .field-text-width {
     width: 300px;
+    border: 0px solid rgba(0, 0, 0, 0.5);
+  }    
+  .field-text-width-exlen {
+    width: 400px;
+    border: 0px solid rgba(0, 0, 0, 0.5);
   }
-  .form-field-single-width {
+  .field-text-width-2 {
     width: 300px;
+    border: 0px solid rgba(0, 0, 0, 0.5);
   }
 
-.example-container {
-  width: 500px;
-  height: 300px;
-  border: 1px solid rgba(0, 0, 0, 0.5);
-}
-
-.example-sidenav-content {
-  display: flex;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-}
-
-.example-sidenav {
-  padding: 20px;
-}
-
-
+  .field-text-width-txtarea{
+    width: 600px;
+    border: 0px solid rgba(0, 0, 0, 0.5);
+  }

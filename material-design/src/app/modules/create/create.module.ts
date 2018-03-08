@@ -13,7 +13,7 @@ import {ReactiveFormsModule, FormsModule} from '@angular/forms';
 import  'hammerjs'
 
 //Material 
-import { MatButtonModule, MatCheckboxModule } from '@angular/material'
+import { MatButtonModule, MatCheckboxModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material'
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 //Sidenav
@@ -54,7 +54,7 @@ import {MatListModule} from '@angular/material/list';
     MatButtonModule, MatCheckboxModule,BrowserAnimationsModule,
     MatSidenavModule, MatInputModule, MatMenuModule, MatToolbarModule,
     MatIconModule, MatStepperModule, MatProgressBarModule, MatTooltipModule,
-    MatSelectModule, MatListModule,
+    MatSelectModule, MatListModule,MatDatepickerModule, MatNativeDateModule
   ],
   declarations: [AddNewCampaignComponent, AddNewVendorComponent],
   exports:[AddNewCampaignComponent, AddNewVendorComponent]

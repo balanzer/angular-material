@@ -28,6 +28,14 @@ export class AddNewCampaignComponent implements OnInit {
         {name: 'Software As A Service', value: 'SAAS'},
     ];
   
+
+        //Vendor values init 
+        partnerVendorValues = [
+          {name: 'Facbook', value: 'facebook'},
+          {name: 'Adara', value: 'adara'},
+          {name: 'Google', value: 'google'},
+      ];
+    
     
   
   
@@ -43,12 +51,11 @@ export class AddNewCampaignComponent implements OnInit {
   
       // form section   
       this.firstFormGroup = this._formBuilder.group({
-        firstName: ['', Validators.required],
-        lastName: ['', Validators.required],
+        firstName: ['Murali', Validators.required],
+        lastName: ['Varath', Validators.required]
+        
       });
-      this.secondFormGroup = this._formBuilder.group({
-        secondCtrl: ['', Validators.required]
-      });
+ 
   
       this.partnerAgreementFG = this._formBuilder.group({
          
