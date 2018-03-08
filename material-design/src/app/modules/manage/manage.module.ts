@@ -4,12 +4,12 @@ import { ManageCampaignComponent } from './manage-campaign/manage-campaign.compo
 import { ManageVendorComponent } from './manage-vendor/manage-vendor.component';
 
 import {MatTableModule} from '@angular/material/table';
-import { MatPaginatorModule, MatFormFieldModule, MatFormFieldControl, MatInputModule, MatSortModule } from '@angular/material';
+import { MatPaginatorModule, MatFormFieldModule, MatFormFieldControl, MatInputModule, MatSortModule, MatToolbarModule, MatButtonModule } from '@angular/material';
 
 @NgModule({
   imports: [
     CommonModule,
-    MatTableModule, MatPaginatorModule, MatFormFieldModule,MatInputModule, MatSortModule
+    MatTableModule, MatPaginatorModule, MatFormFieldModule,MatInputModule, MatSortModule, MatToolbarModule, MatButtonModule
   ],
   declarations: [ManageCampaignComponent, ManageVendorComponent],
   exports: [ManageCampaignComponent, ManageVendorComponent]

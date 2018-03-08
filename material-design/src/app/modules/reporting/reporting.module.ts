@@ -6,13 +6,13 @@ import { ReportByRegionComponent } from './report-by-region/report-by-region.com
 import { ReportByBrandComponent } from './report-by-brand/report-by-brand.component';
 
 import {MatCardModule} from '@angular/material/card';
-import { MatButtonModule, MatTableModule, MatPaginatorModule, MatFormFieldModule, MatInputModule, MatSortModule } from '@angular/material';
+import { MatButtonModule, MatTableModule, MatPaginatorModule, MatFormFieldModule, MatInputModule, MatSortModule, MatToolbarModule } from '@angular/material';
 
 
 @NgModule({
   imports: [
     CommonModule,
-    MatTableModule, MatPaginatorModule, MatFormFieldModule,MatInputModule, MatSortModule
+    MatTableModule, MatPaginatorModule, MatFormFieldModule,MatInputModule, MatSortModule, MatToolbarModule, MatButtonModule
   ],
   declarations: [ReportByVendorComponent, ReportByPageComponent, ReportByRegionComponent, ReportByBrandComponent],
   exports: [ReportByVendorComponent, ReportByPageComponent, ReportByRegionComponent, ReportByBrandComponent]

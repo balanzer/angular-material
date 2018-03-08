@@ -17,19 +17,19 @@ export class ReportByVendorComponent implements OnInit {
   }
 
 
-  displayedColumns = ['id', 'name', 'progress', 'color'];
-  dataSource: MatTableDataSource<UserData>;
+  displayedColumns = ['id', 'name', 'progress', 'viewid'];
+  dataSource: MatTableDataSource<ReportData>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
   constructor() {
-    // Create 100 users
-    const users: UserData[] = [];
-    for (let i = 1; i <= 100; i++) { users.push(createNewUser(i)); }
+    // Create 100 records
+    const reports: ReportData[] = [];
+    for (let i = 1; i <= 3; i++) { reports.push(createNewRecord(i)); }
 
     // Assign the data to the data source for the table to render
-    this.dataSource = new MatTableDataSource(users);
+    this.dataSource = new MatTableDataSource(reports);
   }
 
   /**
@@ -49,29 +49,24 @@ export class ReportByVendorComponent implements OnInit {
 }
 
 /** Builds and returns a new User. */
-function createNewUser(id: number): UserData {
+function createNewRecord(id: number): ReportData {
   const name =
-      NAMES[Math.round(Math.random() * (NAMES.length - 1))] + ' ' +
-      NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) + '.';
+      NAMES[Math.round(Math.random() * (NAMES.length - 1))] ;
 
   return {
     id: id.toString(),
     name: name,
-    progress: Math.round(Math.random() * 100).toString(),
-    color: COLORS[Math.round(Math.random() * (COLORS.length - 1))]
+    progress: Math.round(Math.random() * 10).toString(),
+    viewid: id.toString(),
   };
 }
 
-/** Constants used to fill up our data base. */
-const COLORS = ['maroon', 'red', 'orange', 'yellow', 'olive', 'green', 'purple',
-  'fuchsia', 'lime', 'teal', 'aqua', 'blue', 'navy', 'black', 'gray'];
-const NAMES = ['Maia', 'Asher', 'Olivia', 'Atticus', 'Amelia', 'Jack',
-  'Charlotte', 'Theodore', 'Isla', 'Oliver', 'Isabella', 'Jasper',
-  'Cora', 'Levi', 'Violet', 'Arthur', 'Mia', 'Thomas', 'Elizabeth'];
 
-export interface UserData {
+const NAMES = ['Facebook', 'Adara', 'Google Adwords'];
+
+export interface ReportData {
   id: string;
   name: string;
   progress: string;
-  color: string;
+  viewid :string; 
 }

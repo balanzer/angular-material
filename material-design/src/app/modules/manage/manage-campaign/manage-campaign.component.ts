@@ -14,7 +14,7 @@ export class ManageCampaignComponent implements OnInit {
   }
 
 
-  displayedColumns = ['id', 'name', 'progress', 'color'];
+  displayedColumns = ['id', 'name', 'region', 'vendor' , 'manage' ];
   dataSource: MatTableDataSource<UserData>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -23,7 +23,7 @@ export class ManageCampaignComponent implements OnInit {
   constructor() {
     // Create 100 users
     const users: UserData[] = [];
-    for (let i = 1; i <= 100; i++) { users.push(createNewUser(i)); }
+    for (let i = 1; i <= 20; i++) { users.push(createNewUser(i)); }
 
     // Assign the data to the data source for the table to render
     this.dataSource = new MatTableDataSource(users);
@@ -49,26 +49,28 @@ export class ManageCampaignComponent implements OnInit {
 function createNewUser(id: number): UserData {
   const name =
       NAMES[Math.round(Math.random() * (NAMES.length - 1))] + ' ' +
-      NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) + '.';
+      REGION[Math.round(Math.random() * (REGION.length - 1))] + ' ';
 
+  const region = REGION[Math.round(Math.random() * (REGION.length - 1))];
+  const vendor = VENDOR[Math.round(Math.random() * (VENDOR.length - 1))];
   return {
     id: id.toString(),
     name: name,
-    progress: Math.round(Math.random() * 100).toString(),
-    color: COLORS[Math.round(Math.random() * (COLORS.length - 1))]
+    region: region,
+    vendor: vendor,
   };
 }
 
-/** Constants used to fill up our data base. */
-const COLORS = ['maroon', 'red', 'orange', 'yellow', 'olive', 'green', 'purple',
-  'fuchsia', 'lime', 'teal', 'aqua', 'blue', 'navy', 'black', 'gray'];
-const NAMES = ['Maia', 'Asher', 'Olivia', 'Atticus', 'Amelia', 'Jack',
-  'Charlotte', 'Theodore', 'Isla', 'Oliver', 'Isabella', 'Jasper',
-  'Cora', 'Levi', 'Violet', 'Arthur', 'Mia', 'Thomas', 'Elizabeth'];
+
+const NAMES = ['Facebook', 'Adara', 'Google Adwords', 'Campaign 1',  'Campaign 2',   'Campaign 3',   'Campaign 4' ];
+const REGION = ['AMER', 'GLOBAL', 'GC', 'EUR',  'AMER' ];
+const VENDOR = ['Facebook', 'Adara', 'CJ', 'Google'];
 
 export interface UserData {
   id: string;
   name: string;
-  progress: string;
-  color: string;
+  region: string;
+  vendor: string;
+  
+
 }
