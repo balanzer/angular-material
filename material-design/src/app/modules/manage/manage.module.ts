@@ -3,9 +3,13 @@ import { CommonModule } from '@angular/common';
 import { ManageCampaignComponent } from './manage-campaign/manage-campaign.component';
 import { ManageVendorComponent } from './manage-vendor/manage-vendor.component';
 
+import {MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule, MatFormFieldModule, MatFormFieldControl, MatInputModule, MatSortModule } from '@angular/material';
+
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    MatTableModule, MatPaginatorModule, MatFormFieldModule,MatInputModule, MatSortModule
   ],
   declarations: [ManageCampaignComponent, ManageVendorComponent],
   exports: [ManageCampaignComponent, ManageVendorComponent]
