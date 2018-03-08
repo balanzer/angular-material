@@ -20,15 +20,11 @@
   }
 
   .form-element-spacer {
-    width: 30px;  
+    padding: 20px;
   }
   
   
-  .footer-font {
-    font-size:10px;
-    text-align:center;
-    width: 100%;
-  }
+
   
   .header-app-title-font {
     font-size:15px;
@@ -59,3 +55,5 @@
 .example-sidenav {
   padding: 20px;
 }
+
+

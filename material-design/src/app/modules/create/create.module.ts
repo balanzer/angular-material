@@ -1,9 +1,11 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { AddNewCampaignComponent } from './add-new-campaign/add-new-campaign.component';
+import { AddNewVendorComponent } from './add-new-vendor/add-new-vendor.component';
 
-import { AppRoutingModule } from './app-routing.module';
+import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
+
 import {ReactiveFormsModule, FormsModule} from '@angular/forms';
 
 
@@ -43,30 +45,18 @@ import {MatSelectModule} from '@angular/material/select';
 
 //list
 import {MatListModule} from '@angular/material/list';
-import { SharedModule } from './modules/shared/shared.module';
-import { CreateModule } from './modules/create/create.module';
-import { ManageModule } from './modules/manage/manage.module';
-import { ReportingModule } from './modules/reporting/reporting.module';
-
-
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
+    CommonModule,
     BrowserModule,
-    AppRoutingModule,
     FormsModule, ReactiveFormsModule,
     MatButtonModule, MatCheckboxModule,BrowserAnimationsModule,
     MatSidenavModule, MatInputModule, MatMenuModule, MatToolbarModule,
     MatIconModule, MatStepperModule, MatProgressBarModule, MatTooltipModule,
     MatSelectModule, MatListModule,
-
-    SharedModule,CreateModule, ManageModule, ReportingModule
-
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [AddNewCampaignComponent, AddNewVendorComponent],
+  exports:[AddNewCampaignComponent, AddNewVendorComponent]
 })
-export class AppModule { }
+export class CreateModule { }

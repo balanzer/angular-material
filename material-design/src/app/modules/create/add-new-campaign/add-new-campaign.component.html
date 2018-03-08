@@ -1,0 +1,180 @@
+
+      <div class="container">
+        <!-- Page Content goes here -->
+  
+    <div class="row">
+        <mat-vertical-stepper [linear]="isLinear" #stepper="matVerticalStepper">
+          <mat-step [stepControl]="firstFormGroup">
+            <form [formGroup]="firstFormGroup">
+              <ng-template matStepLabel>Fill out your details</ng-template>
+              
+          <mat-form-field class="form-field-full-width">
+              <input matInput placeholder="First name" formControlName="firstName" required>
+              <mat-icon matSuffix>person</mat-icon>
+          </mat-form-field>
+          <span class="form-element-spacer">&nbsp;</span>
+          <mat-form-field class="form-field-full-width">
+                <input matInput placeholder="Last name" formControlName="lastName" required>
+                <mat-icon matSuffix>person</mat-icon>
+          </mat-form-field>
+          <span class="form-element-spacer">&nbsp;</span>
+          <mat-form-field class="form-field-single-width">
+            <input matInput placeholder="Enter your email" [formControl]="email" required>
+            <mat-icon matSuffix>email</mat-icon>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+          </mat-form-field>
+
+              <div>
+                <button mat-raised-button matStepperNext color="primary">Next</button>
+              </div>
+            </form>
+          </mat-step>
+    
+          <mat-step [stepControl]="partnerAgreementFG">
+            <form [formGroup]="partnerAgreementFG">
+              <ng-template matStepLabel>Select Partner Agreement</ng-template>
+              
+        <mat-form-field>
+          <mat-select placeholder="Partner Agreement" [formControl]="partnerAgreementCtrl" required>
+            <mat-option>--</mat-option>
+            <mat-option *ngFor="let partAggValue of partnerAgreementValues" [value]="partAggValue">
+              {{partAggValue.name}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="partnerAgreementCtrl.hasError('required')">Please choose an agreement</mat-error>
+          <!--<mat-hint>{{partnerAgreementCtrl.value?.value}}</mat-hint>  -->
+        </mat-form-field>
+        
+              <div>
+                <button mat-raised-button color="accent"  matStepperPrevious>Back</button>
+                <button mat-raised-button color="primary"   matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+          
+          <mat-step [stepControl]="placeHolderFG">
+              <form [formGroup]="placeHolderFG">
+                <ng-template matStepLabel>Fill out Campaign  details</ng-template>
+            
+            <div>
+                  <button mat-raised-button color="accent"  matStepperPrevious>Back</button>
+                  <button mat-raised-button color="primary"   matStepperNext>Next</button>
+                </div>
+              </form>
+            </mat-step>
+        
+              
+          <mat-step [stepControl]="placeHolderFG">
+              <form [formGroup]="placeHolderFG">
+                <ng-template matStepLabel>Select Vendor</ng-template>
+            
+            <div>
+                  <button mat-raised-button color="accent"  matStepperPrevious>Back</button>
+                  <button mat-raised-button color="primary"   matStepperNext>Next</button>
+                </div>
+              </form>
+            </mat-step>
+          
+        
+        
+              
+          <mat-step [stepControl]="placeHolderFG">
+              <form [formGroup]="placeHolderFG">
+                <ng-template matStepLabel>Select Region(s)</ng-template>
+            
+            <div>
+                  <button mat-raised-button color="accent"  matStepperPrevious>Back</button>
+                  <button mat-raised-button color="primary"   matStepperNext>Next</button>
+                </div>
+              </form>
+            </mat-step>
+          
+        
+              
+          <mat-step [stepControl]="placeHolderFG">
+              <form [formGroup]="placeHolderFG">
+                <ng-template matStepLabel>Select Brands(s)</ng-template>
+            
+            <div>
+                  <button mat-raised-button color="accent"  matStepperPrevious>Back</button>
+                  <button mat-raised-button color="primary"   matStepperNext>Next</button>
+                </div>
+              </form>
+            </mat-step>
+          
+        
+              
+          <mat-step [stepControl]="placeHolderFG">
+              <form [formGroup]="placeHolderFG">
+                <ng-template matStepLabel>Select Viewport(s)</ng-template>
+            
+            <div>
+                  <button mat-raised-button color="accent"  matStepperPrevious>Back</button>
+                  <button mat-raised-button color="primary"   matStepperNext>Next</button>
+                </div>
+              </form>
+            </mat-step>
+          
+        
+        
+              
+          <mat-step [stepControl]="placeHolderFG">
+              <form [formGroup]="placeHolderFG">
+                <ng-template matStepLabel>Select Tracing Type</ng-template>
+            
+            <div>
+                  <button mat-raised-button color="accent"  matStepperPrevious>Back</button>
+                  <button mat-raised-button color="primary"   matStepperNext>Next</button>
+                </div>
+              </form>
+            </mat-step>
+          
+        
+        
+              
+          <mat-step [stepControl]="placeHolderFG">
+              <form [formGroup]="placeHolderFG">
+                <ng-template matStepLabel>Fill out Tracking  details</ng-template>
+            
+            <div>
+                  <button mat-raised-button color="accent"  matStepperPrevious>Back</button>
+                  <button mat-raised-button color="primary"   matStepperNext>Next</button>
+                </div>
+              </form>
+            </mat-step>
+        
+                  
+          <mat-step [stepControl]="placeHolderFG">
+              <form [formGroup]="placeHolderFG">
+                <ng-template matStepLabel>Special Instructions </ng-template>
+            
+            <div>
+                  <button mat-raised-button color="accent"  matStepperPrevious>Back</button>
+                  <button mat-raised-button color="primary"   matStepperNext>Next</button>
+                </div>
+              </form>
+            </mat-step>
+          
+                  
+            <mat-step [stepControl]="placeHolderFG">
+                <form [formGroup]="placeHolderFG">
+                  <ng-template matStepLabel>Notes</ng-template>
+              
+              <div>
+                    <button mat-raised-button color="accent"  matStepperPrevious>Back</button>
+                    <button mat-raised-button color="primary"   matStepperNext>Next</button>
+                  </div>
+                </form>
+              </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Done</ng-template>
+            You are now done.
+            <div>
+              <button mat-raised-button color="accent"  matStepperPrevious>Back</button>
+              <button mat-raised-button color="warn"   (click)="stepper.reset()">Reset</button>
+            </div>
+          </mat-step>
+        </mat-vertical-stepper>
+        
+          </div>
+        </div>
