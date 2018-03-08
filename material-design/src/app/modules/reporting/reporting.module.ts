@@ -5,9 +5,14 @@ import { ReportByPageComponent } from './report-by-page/report-by-page.component
 import { ReportByRegionComponent } from './report-by-region/report-by-region.component';
 import { ReportByBrandComponent } from './report-by-brand/report-by-brand.component';
 
+import {MatCardModule} from '@angular/material/card';
+import { MatButtonModule, MatTableModule, MatPaginatorModule, MatFormFieldModule, MatInputModule, MatSortModule } from '@angular/material';
+
+
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    MatTableModule, MatPaginatorModule, MatFormFieldModule,MatInputModule, MatSortModule
   ],
   declarations: [ReportByVendorComponent, ReportByPageComponent, ReportByRegionComponent, ReportByBrandComponent],
   exports: [ReportByVendorComponent, ReportByPageComponent, ReportByRegionComponent, ReportByBrandComponent]
